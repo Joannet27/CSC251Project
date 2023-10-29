@@ -25,7 +25,7 @@ public class Policy
    {
       policyNum = num;
       providerName = name;
-      info = data; // place holder b/c its the bad way
+      info = new PolicyHolder(data);
    }
      
  // --------------Setter Methods--------------------
@@ -73,5 +73,14 @@ public class Policy
    {
       return info;//place holder
    }
-
+   
+   /**
+      @return Sting representation of policy
+   */
+   public String toString()
+   {
+      return "Policy Number: " + policyNum + "\n" +
+               "Provider Name: " + providerName + "\n"+
+               info;
+   }
 }

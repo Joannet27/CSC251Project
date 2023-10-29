@@ -49,27 +49,15 @@ public class Project_joanne_tran
          status.add(smokeStatus);
       
          // calling the object
-         Policy info = new Policy(policyNumber, providerName, firstName, lastName, age, smokeStatus, height, weight);
+         PolicyHolder holder = new PolicyHolder(firstName, lastName, age, smokeStatus, height, weight);
+         Policy info = new Policy(policyNumber, providerName, holder);
       
-         System.out.println("Policy Number: " + info.getPolicyNum());
-      
-         System.out.println("Provider Name: " + info.getProviderName());
+         System.out.println(info.toString());
        
-         System.out.println("Policyholder First Name: " + info.getFirstName());
-        
-         System.out.println("Policyholder Last Name: " + info.getLastName());
+         System.out.printf("Policyholder BMI: %.2f \n",info.getHolderInfo().getBMI());
+         System.out.printf("Policy Price: $%.2f \n",info.getHolderInfo().getPrice());
          
-         System.out.println("Policyholder Age: " + info.getAge());
-          
-         System.out.println("Policyholder Smoking Status: " + info.getSmokeStatuse());
-           
-         System.out.println("Policyholder Height: " + info.getHeight());
-            
-         System.out.println("Policyholder Weight: " + info.getWeight());
-            
-         System.out.printf("Policyholder BMI: %.2f \n",info.getBMI());
-            
-         System.out.printf("Policy Price: $%.2f \n",info.getPrice());
+        
          
          System.out.println();// skip a line so the differen provider infomation are separated
          

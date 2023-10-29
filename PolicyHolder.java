@@ -27,6 +27,20 @@ public class PolicyHolder
       height = ht;
       weight = wt;
    }
+   
+   /**
+      copy Constructor
+   */
+   public PolicyHolder(PolicyHolder obj)
+   {
+      firstName = obj.firstName;
+      lastName = obj.lastName;
+      holderAge = obj.holderAge;
+      smokeStatus = obj.smokeStatus ;
+      height = obj.height;
+      weight = obj.weight;
+   }
+   
 //---------- Setters Method -----------
    /**
      setFirstName
@@ -154,7 +168,8 @@ public class PolicyHolder
    */
    public double getPrice()
    {
-      double fee = 600.0;
+      final double SET_COST = 600.0;
+      double fee = SET_COST;
       //age over 50, fee add 75
       if (holderAge>50)
       {
@@ -174,5 +189,17 @@ public class PolicyHolder
       }
       return fee;
    }
-
+   
+   /**
+   
+   */
+   public String toString()
+   {
+      return "Policyholder First Name: " + firstName +"\n"+
+             "Policyholder Last Name: " + lastName +"\n"+
+             "Policyholder Age: " + holderAge +"\n"+
+             "Policyholder Smoking Status: " + smokeStatus +"\n"+
+             "Policyholder Height: " + height +"\n"+
+             "Policyholder Weight: " +weight;
+   }
 }
